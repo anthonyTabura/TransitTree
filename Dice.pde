@@ -79,7 +79,7 @@ void changeScenes() {
 }
 void keyPressed() {
   if (introSlide==true) {
-    if (keyCode==LEFT) {
+    if (keyCode==SHIFT) {
       background(0);
 
       s=(String)current.getLeft().getValue();
