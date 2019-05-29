@@ -41,10 +41,10 @@ void draw() {
   textSize(20);
   text("Think of a starting place, and a destination, and answer the questions", 10, 90);
 
-  s=(String)current.getValue();
+  //s=(String)current.getValue();
 
   //System.out.println(s);
-  text(s, 120, 150);
+  //text(s, 120, 150);
   text("Press Right Key", 480, 320);
   text("Yes", 540, 300);
   
