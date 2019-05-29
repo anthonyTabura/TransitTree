@@ -137,8 +137,8 @@ void keyPressed() {
         current=current.getLeft();
       }
     }
-    if (keyCode==RIGHT) {
-      //background(0);
+    else if (keyCode==RIGHT) {
+      background(0);
 
       s=(String)current.getRight().getValue();
 
