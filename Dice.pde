@@ -12,12 +12,12 @@ boolean six=false;
 boolean seven=false;
 boolean eight=false;
 String s="";
-//PImage bus;
-//PImage car;
-//PImage subway;
-//PImage bike;
-//PImage scooter;
-//PImage walk;
+PImage bus;
+PImage car;
+PImage subway;
+PImage bike;
+PImage scooter;
+PImage walk;
 String i="";
 
 void setup() {
@@ -25,12 +25,12 @@ void setup() {
   size(700, 400);
   current=tree.buildTree();
  
-  //bus=loadImage("bus.jpg");
-  //car=loadImage("car.jpg");
-  //subway=loadImage("subway.jpg");
-  //bike=loadImage("bike.jpg");
-  //scooter=loadImage("scooter.jpg");
-  //walk=loadImage("walk.jpg");
+  bus=loadImage("bus.jpg");
+  car=loadImage("car.jpg");
+  subway=loadImage("subway.jpg");
+  bike=loadImage("bike.jpg");
+  scooter=loadImage("scooter.jpg");
+  walk=loadImage("walk.jpg");
 }
 void draw() {
 
@@ -44,13 +44,13 @@ void draw() {
   s=(String)current.getValue();
 
   //System.out.println(s);
-  text(s, 120, 150);
-  text("Press Right Key", 480, 320);
+  text(s, 180, 150);
+  text("Press Y", 520, 320);
   text("Yes", 540, 300);
   
-  text("Press Left Key", 60, 320);
+  text("Press N", 80, 320);
   text("No", 100, 300);
-    text(i,50,210);
+  text(i,50,230);
 }
 void changeScenes() {
    Scenes sc=new Scenes();
@@ -77,15 +77,15 @@ void changeScenes() {
     introSlide=true;
   }
 }
-void keyPressed() {
+void keyTyped() {
   if (introSlide==true) {
-    if (keyCode==LEFT) {
+    if (key=='n') {
       background(0);
 
       s=(String)current.getLeft().getValue();
 
       //System.out.println(s);
-      text(s, 120, 150);
+      text(s, 180, 150);
       println(s);
       if (s.equals("You unfortunately have to use a car")) {
         one=true;
@@ -96,7 +96,7 @@ void keyPressed() {
         two=true;
         introSlide=false;
         println("s");
-        i="Walking is a great way to save money and burn \ncalories during your commute! It also reduces your \ncarbon footprint by more than 75%!";
+        i="Walking is a great way to save money and burn calories during your commute! \nIt also reduces your carbon footprint by more than 75%!";
       }
       if (s.equals("You can use a combonation of \nbusses/walking/biking to get to your destination!")) {
         three=true;
@@ -108,7 +108,7 @@ void keyPressed() {
         four=true;
         introSlide=false;
         println("s");
-        i="Biking is becoming more of a trend in the suburbs, \nas more towns add safe bike lanes. \nIt reduces Co2 and your weight!";
+        i="Biking is becoming more of a trend in the suburbs, as more towns add safe bike lanes. \nIt reduces Co2 and your weight!";
       }
       if (s.equals("You should take a bus to your destination!")) {
         five=true;
@@ -120,7 +120,7 @@ void keyPressed() {
         six=true;
         introSlide=false;
         println("s");
-        i="Biking can be much easier than driving. \nDedicated bike lanes keep you \nsafe and helps zoom you past traffic.";
+        i="Biking in cities is much easier than driving. Dedicated bike lanes keep you \nsafe and helps zoom you past traffic.";
       }
       if (s.equals("You should use an electric scooter to get to your destination!")) {
         seven=true;
@@ -137,12 +137,12 @@ void keyPressed() {
         current=current.getLeft();
       }
     }
-    else if (keyCode==RIGHT) {
+    if (key=='y') {
       background(0);
 
       s=(String)current.getRight().getValue();
 
-      text(s, 120, 150);
+      text(s, 180, 150);
       System.out.println(s);
       if (s.equals("You unfortunately have to use a car")) {
         one=true;
@@ -153,7 +153,7 @@ void keyPressed() {
         two=true;
         introSlide=false;
         println("s");
-        i="Walking is a great way to save money and \nburn calories during your commute! \nIt also reduces your carbon footprint by more than 75%!";
+        i="Walking is a great way to save money and burn calories during your commute! \nIt also reduces your carbon footprint by more than 75%!";
       }
       if (s.equals("You can use a combonation of \nbusses/walking/biking to get to your destination!")) {
         three=true;
@@ -165,7 +165,7 @@ void keyPressed() {
         four=true;
         introSlide=false;
         println("s");
-        i="Biking is becoming more of a trend\n in the suburbs, as more towns add safe bike lanes. \nIt reduces Co2 and your weight!";
+        i="Biking is becoming more of a trend in the suburbs, as more towns add safe bike lanes. \nIt reduces Co2 and your weight!";
       }
       if (s.equals("You should take a bus to your destination!")) {
         five=true;
@@ -177,7 +177,7 @@ void keyPressed() {
         six=true;
         introSlide=false;
         println("s");
-        i="Biking can be much easier than driving. \nDedicated bike lanes keep you \nsafe and helps zoom you past traffic.";
+        i="Biking in cities is much easier than driving. Dedicated bike lanes keep you \nsafe and helps zoom you past traffic.";
       }
       if (s.equals("You should use an electric scooter to get to your destination!")) {
         seven=true;
@@ -207,7 +207,7 @@ class TransitTree {
     root=null;
   }
   TreeNode buildTree() {
-    root=(new TreeNode("Are you travelling to/from a suburb/rural area ?"));
+    root=(new TreeNode("Are you travelling outside of a city?"));
     //level one
     root.setLeft(new TreeNode("Is your destination close?"));
     root.setRight(new TreeNode("Travelling to Suburban Area?"));
@@ -323,34 +323,34 @@ public class Scenes {
   }
   void scene1() {
     text("scene1", 200, 200);
-   // image(car, 0, 200);
+    image(car, 0, 200);
   }
   void scene2() {
     text("scene2", 200, 200);
-   // image(walk, 0, 200);
+    image(walk, 0, 200);
   }
   void scene3() {
     text("scene3", 200, 200);
-  //  image(bus, 0, 200);
+    image(bus, 0, 200);
   }
   void scene4() {
     text("scene4", 200, 200);
-    //image(bike, 0, 200);
+    image(bike, 0, 200);
   }
   void scene5() {
     text("scene5", 200, 200);
-  //  image(bus, 0, 200);
+    image(bus, 0, 200);
   }
   void scene6() {
     text("scene6", 200, 200);
-    //image(bike, 0, 200);
+    image(bike, 0, 200);
   }
   void scene7() {
     text("scene7", 200, 200);
-    //image(scooter, 0, 200);
+    image(scooter, 0, 200);
   }
   void scene8() {
     text("scene8", 200, 200);
-  //  image(subway, 0, 200);
+    image(subway, 0, 200);
   }
 }
