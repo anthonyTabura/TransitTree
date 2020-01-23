@@ -34,17 +34,17 @@ void setup() {
 }
 void draw() {
 
-  background(0);
+ // background(0);
   fill(255);
   textSize(32);
   text("Which Transportation Should You Choose?", 20, 50);
   textSize(20);
   text("Think of a starting place, and a destination, and answer the questions", 10, 90);
 
-  //s=(String)current.getValue();
+  s=(String)current.getValue();
 
   //System.out.println(s);
-  //text(s, 120, 150);
+  text(s, 120, 150);
   text("Press Right Key", 480, 320);
   text("Yes", 540, 300);
   
@@ -79,14 +79,14 @@ void changeScenes() {
 }
 void keyPressed() {
   if (introSlide==true) {
-    if (keyCode==SHIFT) {
+    if (keyCode==LEFT) {
       background(0);
 
       s=(String)current.getLeft().getValue();
 
       //System.out.println(s);
       text(s, 120, 150);
-      println(s);
+      //println(s);
       if (s.equals("You unfortunately have to use a car")) {
         one=true;
         introSlide=false;
@@ -95,55 +95,55 @@ void keyPressed() {
       if (s.equals("You should walk to your destination!")) {
         two=true;
         introSlide=false;
-        println("s");
+        //println("s");
         i="Walking is a great way to save money and burn \ncalories during your commute! It also reduces your \ncarbon footprint by more than 75%!";
       }
       if (s.equals("You can use a combonation of \nbusses/walking/biking to get to your destination!")) {
         three=true;
         introSlide=false;
-        println("s");
+        //println("s");
         i="In the city, a combonation of many transit options allow flexibility. \nTravelling anywhere is just a bus and bike ride away!";
       }
       if (s.equals("You can use a car or bike to get to your destination")) {
         four=true;
         introSlide=false;
-        println("s");
+        //println("s");
         i="Biking is becoming more of a trend in the suburbs, \nas more towns add safe bike lanes. \nIt reduces Co2 and your weight!";
       }
       if (s.equals("You should take a bus to your destination!")) {
         five=true;
         introSlide=false;
-        println("s");
+        //println("s");
         i="Busses allow for great travel flexibility due to the \nhigh number of them.  And with dedicated bus lanes,\n they can be super fast too!";
       }
       if (s.equals("You should bike to your destination!")) {
         six=true;
         introSlide=false;
-        println("s");
+        //println("s");
         i="Biking can be much easier than driving. \nDedicated bike lanes keep you \nsafe and helps zoom you past traffic.";
       }
       if (s.equals("You should use an electric scooter to get to your destination!")) {
         seven=true;
         introSlide=false;
-        println("s");
+        //println("s");
         i="Electric scooter companies charge you to use their scooters, \nbut the plus is that you can ride them \nanywhere a bike can go, with no physical activity!";
       }
       if (s.equals("You should use Light Rail or Subway!")) {
         eight=true;
         introSlide=false;
-        println("s");
+        //println("s");
         i="Lightrail and Subways are the best at transporting quickly and \nreducing Co2. Use these if at all possible!";
       } else {
         current=current.getLeft();
       }
     }
-    if (keyCode==DOWN) {
+    if (keyCode==RIGHT) {
       background(0);
 
       s=(String)current.getRight().getValue();
 
       text(s, 120, 150);
-      System.out.println(s);
+      //System.out.println(s);
       if (s.equals("You unfortunately have to use a car")) {
         one=true;
         introSlide=false;
@@ -152,43 +152,43 @@ void keyPressed() {
       if (s.equals("You should walk to your destination!")) {
         two=true;
         introSlide=false;
-        println("s");
+        //println("s");
         i="Walking is a great way to save money and \nburn calories during your commute! \nIt also reduces your carbon footprint by more than 75%!";
       }
       if (s.equals("You can use a combonation of \nbusses/walking/biking to get to your destination!")) {
         three=true;
         introSlide=false;
-        println("s");
+        //println("s");
         i="In the city, a combonation of many transit options allow flexibility. \nTravelling anywhere is just a bus and bike ride away!";
       }
       if (s.equals("You can use a car or bike to get to your destination")) {
         four=true;
         introSlide=false;
-        println("s");
+        //println("s");
         i="Biking is becoming more of a trend\n in the suburbs, as more towns add safe bike lanes. \nIt reduces Co2 and your weight!";
       }
       if (s.equals("You should take a bus to your destination!")) {
         five=true;
         introSlide=false;
-        println("s");
+        //println("s");
         i="Busses allow for great travel flexibility due to\n the high number of them. And with dedicated bus lanes, \nthey can be super fast too!";
       }
       if (s.equals("You should bike to your destination!")) {
         six=true;
         introSlide=false;
-        println("s");
+        //println("s");
         i="Biking can be much easier than driving. \nDedicated bike lanes keep you \nsafe and helps zoom you past traffic.";
       }
       if (s.equals("You should use an electric scooter to get to your destination!")) {
         seven=true;
         introSlide=false;
-        println("s");
+        //println("s");
         i="Electric scooter companies charge you to use their scooters,\nbut the plus is that you can ride them anywhere \na bike can go, with no physical activity!";
       }
       if (s.equals("You should use Light Rail or Subway!")) {
         eight=true;
         introSlide=false;
-        println("s");
+        //println("s");
         i="Lightrail and Subways are the best at transporting quickly and \nreducing Co2. Use these if at all possible!";
       }  else {
         current=current.getRight();
