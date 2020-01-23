@@ -34,7 +34,7 @@ void setup() {
 }
 void draw() {
 
- // background(0);
+  background(0);
   fill(255);
   textSize(32);
   text("Which Transportation Should You Choose?", 20, 50);
